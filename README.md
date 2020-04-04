@@ -41,6 +41,10 @@ All possible Commands:
 - update
 - exit 
 
+All possible optional Arguments
+- -u, --update
+- -r, --reset
+- -h, --help
 
 Requirements:
 
