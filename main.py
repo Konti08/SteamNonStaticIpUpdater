@@ -101,6 +101,7 @@ if __name__ == "__main__":
 
         print("wait for steam server file path")
         steamServerFilePath = input()
+        steamServerFilePath += "\\serverbrowser_hist.vdf"
 
         config = ET.Element('config')
         steamPaths = ET.SubElement(config, 'steamPaths')
@@ -202,5 +203,3 @@ if __name__ == "__main__":
     configFile.close()
 
     print('Bye Bye from SteamNonStaticIPUpdater')
-
-    #a = socket.gethostbyname("faisland-1.servegame.com")
