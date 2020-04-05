@@ -161,6 +161,17 @@ if __name__ == "__main__":
             saveNewServerInfoToSteamFile(serverName, socket.gethostbyname(hostname), queryPort, steamServerFilePath)
 
         elif newUserInput == 'delete':
+            # list all servers
+            serverCount = 0
+            serverList = []
+            for elem in root:
+                if elem.tag == 'Server':
+                    serverCount += 1
+                    serverList.append([serverCount, elem.get('name'), elem.get('hostname'), elem.get('queryPort')])
+
+            print("\n" + tabulate(serverList, headers=['Server Nr', 'Server name', 'hostname', 'QueryPort'],
+                                  tablefmt='orgtbl') + "\n")
+
             print('Server Name')
             serverName = input()
 
