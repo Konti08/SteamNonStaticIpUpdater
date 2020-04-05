@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import vdf
 
 from copy import deepcopy
+from tabulate import tabulate
 
 
 def saveNewServerInfoToSteamFile(serverName, ipAddress, queryPort, steamServerListPath):
@@ -183,6 +184,17 @@ if __name__ == "__main__":
             deleteServerFromSteamFile(serverName, steamServerFilePath)
 
             print('Server %s removed' % serverName)
+
+        elif newUserInput == 'list':
+            serverCount = 0
+            serverList = []
+            for elem in root:
+                if elem.tag == 'Server':
+                    serverCount += 1
+                    serverList.append([serverCount, elem.get('name'), elem.get('hostname'), elem.get('queryPort')])
+
+            print("\n"+tabulate(serverList, headers=['Server Nr', 'Server name', 'hostname', 'QueryPort'],
+                  tablefmt='orgtbl')+"\n")
 
         elif newUserInput == 'update':
             # update all server from cfg file in steam server list
