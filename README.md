@@ -38,6 +38,7 @@ HowTo delete a server from the auto-update list
 All possible Commands:
 - create
 - delete
+- list
 - update
 - exit 
 
