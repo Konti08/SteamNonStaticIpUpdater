@@ -49,6 +49,7 @@ All possible optional Arguments
 
 Requirements:
 
-Python 3.7
-vdf 3.2 
+- Python 3.7
+- vdf 3.2
+- tabulate
 
